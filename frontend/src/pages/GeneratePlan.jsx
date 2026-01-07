@@ -133,9 +133,9 @@ const GeneratePlan = () => {
           </div>
         ))}
 
-        <button type="button" onClick={addSubject}>
+        {/* <button type="button" onClick={addSubject}>
           ➕ Add Subject
-        </button>
+        </button> */}
 
         <br /><br />
 

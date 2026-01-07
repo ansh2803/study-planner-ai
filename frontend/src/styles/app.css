@@ -44,10 +44,13 @@ body {
 /* Cards */
 .card {
   background: white;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 100px;
+  border-radius: 80px;
   margin-bottom: 15px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  /* width: 70%; */
+  box-sizing: border-box;
+
 }
 
 .card b {
@@ -77,4 +80,9 @@ button {
 
 button:hover {
   background-color: #2980b9;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 6px;
 }

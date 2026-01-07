@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import aiRoutes from './routes/aiPlan.Routes.js';
+import aiRoutes from './routes/aiPlan.routes.js';
 import connectDB from './config/db.js';
 
 dotenv.config();
