@@ -44,7 +44,7 @@ const Signup = () => {
           placeholder="Full Name"
           value={name}
           required
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)} style={{width: "100%", padding: "20px", marginBottom: "20px"}}
         />
 
         <input
@@ -52,7 +52,7 @@ const Signup = () => {
           placeholder="Email"
           value={email}
           required
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)} style={{width: "100%", padding: "20px", marginBottom: "20px"}}
         />
 
         <input
@@ -60,7 +60,7 @@ const Signup = () => {
           placeholder="Password"
           value={password}
           required
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)} style={{width: "100%", padding: "20px", marginBottom: "20px"}}
         />
 
         <button type="submit" disabled={loading}>
