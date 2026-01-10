@@ -86,3 +86,12 @@ input[type="checkbox"] {
   transform: scale(1.2);
   margin-right: 6px;
 }
+
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
