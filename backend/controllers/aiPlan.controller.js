@@ -35,9 +35,7 @@ Each item MUST have exactly these keys:
 Total study time per day must NOT exceed ${dailyHours} hours.
 
 Provided subjects (DO NOT GO OUTSIDE THIS LIST):
-${subjects.map(
-  (s) => `- ${s.name}`
-).join("\n")}
+${subjects.map((s) => `- ${s.name}`).join("\n")}
 
 Additional guidance:
 - Focus depth according to confidence and priority
@@ -47,59 +45,59 @@ Additional guidance:
 Return ONLY the JSON array.
 `;
 
-//     const prompt = `
-// You are an expert academic planner for MCA students.
+    //     const prompt = `
+    // You are an expert academic planner for MCA students.
 
-// Create a 7-day study plan based on the student's context.
+    // Create a 7-day study plan based on the student's context.
 
-// IMPORTANT RULES (FOLLOW STRICTLY):
-// - Output MUST be a valid JSON ARRAY
-// - Do NOT add explanations or text
-// - Do NOT wrap output in markdown or backticks
-// - Use ONLY the keys specified below
+    // IMPORTANT RULES (FOLLOW STRICTLY):
+    // - Output MUST be a valid JSON ARRAY
+    // - Do NOT add explanations or text
+    // - Do NOT wrap output in markdown or backticks
+    // - Use ONLY the keys specified below
 
-// Each array element MUST contain exactly:
-// - "day" (string, e.g. "Day 1")
-// - "subject" (string)
-// - "task" (string)
-// - "duration_hours" (number)
+    // Each array element MUST contain exactly:
+    // - "day" (string, e.g. "Day 1")
+    // - "subject" (string)
+    // - "task" (string)
+    // - "duration_hours" (number)
 
-// Example format:
-// [
-//   {
-//     "day": "Day 1",
-//     "subject": "Data Structures",
-//     "task": "Study arrays and linked lists",
-//     "duration_hours": 2
-//   }
-// ]
+    // Example format:
+    // [
+    //   {
+    //     "day": "Day 1",
+    //     "subject": "Data Structures",
+    //     "task": "Study arrays and linked lists",
+    //     "duration_hours": 2
+    //   }
+    // ]
 
-// STUDENT CONTEXT:
-// - Daily study hours: ${dailyHours}
-// - Study goal: ${goal}
-// - Best study time: ${studyTime}
+    // STUDENT CONTEXT:
+    // - Daily study hours: ${dailyHours}
+    // - Study goal: ${goal}
+    // - Best study time: ${studyTime}
 
-// SUBJECT DETAILS:
-// ${subjects
-//   .map(
-//     (s) =>
-//       `- ${s.name}
-//         Confidence level (1–5): ${s.confidence}
-//         Priority: ${s.priority}
-//         Total units: ${s.units}`
-//   )
-//   .join("\n")}
+    // SUBJECT DETAILS:
+    // ${subjects
+    //   .map(
+    //     (s) =>
+    //       `- ${s.name}
+    //         Confidence level (1–5): ${s.confidence}
+    //         Priority: ${s.priority}
+    //         Total units: ${s.units}`
+    //   )
+    //   .join("\n")}
 
-// PLANNING RULES:
-// - Allocate MORE time to subjects with LOW confidence (1–2)
-// - Respect subject priority (High > Medium > Low)
-// - Align harder tasks earlier in the week if confidence is low
-// - Include at least one revision task in the week
-// - Do NOT exceed daily study hours
-// - Keep tasks realistic and student-friendly
+    // PLANNING RULES:
+    // - Allocate MORE time to subjects with LOW confidence (1–2)
+    // - Respect subject priority (High > Medium > Low)
+    // - Align harder tasks earlier in the week if confidence is low
+    // - Include at least one revision task in the week
+    // - Do NOT exceed daily study hours
+    // - Keep tasks realistic and student-friendly
 
-// Return ONLY the JSON array.
-// `;
+    // Return ONLY the JSON array.
+    // `;
 
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
@@ -149,7 +147,7 @@ export const getStudyPlans = async (req, res) => {
   try {
     const plans = await StudyPlan.find().sort({ createdAt: -1 });
     res.status(200).json(plans);
-     console.log("OPENROUTER KEY:", process.env.OPENROUTER_API_KEY);
+    console.log("OPENROUTER KEY:", process.env.OPENROUTER_API_KEY);
     console.log("REQ BODY:", req.body);
   } catch (error) {
     res.status(500).json({
@@ -185,4 +183,3 @@ export const deleteStudyPlan = async (req, res) => {
     res.status(500).json({ error: "Failed to delete plan" });
   }
 };
-
