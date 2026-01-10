@@ -15,13 +15,13 @@ const Login = () => {
   };
   return (
     <div className="container">
-      <h1>Login TO AI-STUDY-PLANNER</h1>
+      <h1>AI-STUDY-PLANNER</h1>
       <form onSubmit={handleSubmit}>
-        <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} style={{ width: "100%", padding: "10px", marginBottom: "10px" }} />
+        <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} style={{ width: "100%", padding: "20px", marginBottom: "10px" }} />
         <input
           type="password"
           placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}  style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+          onChange={(e) => setPassword(e.target.value)}  style={{ width: "100%", padding: "20px", marginBottom: "20px" }}
         />
         <button>Login</button>
         <div className="auth-container">

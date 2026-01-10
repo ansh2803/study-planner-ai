@@ -27,6 +27,14 @@ body {
   width: 100%;
   padding: 30px 463px;
   box-sizing: border-box;
+  
+}
+.container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c3e50;
+
+
 }
 
 .container > * {
@@ -41,6 +49,16 @@ body {
   margin-bottom: 20px;
 }
 
+.container button {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #27ae60;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  
+}
 /* Cards */
 .card {
   background: white;
